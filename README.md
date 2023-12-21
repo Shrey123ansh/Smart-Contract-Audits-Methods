@@ -82,8 +82,8 @@ This repository focuses on ensuring the security and reliability of smart contra
 
 4. **Send ETH via Call**
    - Send ETH via call, avoid transfer and send
-   ```solidity
-  (bool sent, bytes memory data)to.call(value: msg.value)(""); require(sent, "Failed to send Ether");
+  ```solidity
+   (bool sent, bytes memory data)to.call(value: msg.value)(""); require(sent, "Failed to send Ether");
    ```
    - Avoid pseudo-randomness (SWC-120)
    -Use Chainlink VRF
@@ -92,7 +92,9 @@ This repository focuses on ensuring the security and reliability of smart contra
 
 5. **Divide Before Multiply**
    - Divide before multiplying to avoid precision errors.
-   - return result basePercent / 10000
+  ```solidity
+   return result basePercent / 10000;
+   ```
    - Use increaseAllowance & decreaseAllowance instead of approve.
    - Check for address (0x0)
 
